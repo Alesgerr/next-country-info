@@ -13,7 +13,7 @@ const SearchList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(countries.latlng, "latlng");
+
   const handleChange = (event) => {
     setSelectedRegion(event.target.value);
   };
@@ -138,7 +138,7 @@ const SearchList = () => {
                 style={{ height: "44px" }}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>All Regions</em>
                 </MenuItem>
                 <MenuItem value="Africa">Africa</MenuItem>
                 <MenuItem value="Americas">Americas</MenuItem>

@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-weight: 700;
 }
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,4 +41,8 @@ header {
 }
 .leaflet-bottom leaflet-right {
   display: none; 
+}
+#demo-select-small-label {
+  color: #9CA3AF;
+  font-weight: 700;
 }

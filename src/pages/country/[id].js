@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 
 const CountryMap = dynamic(() => import("../../components/CountryMap"), { ssr: false });
 const CountryDetail = ({ country }) => {
-  console.log(country);
+
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
   const handleNavigateBack = () => {
