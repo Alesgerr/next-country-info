@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Pane } from "react-leaflet";
-import MarkerIcon from "../assets/512px-Map_marker_font_awesome.svg.png";
-import MarkerShadow from "../../node_modules/leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
