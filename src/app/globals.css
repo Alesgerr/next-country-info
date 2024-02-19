@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  background-color: #000000 !important;
+}
+input {
+  /* background-color: #3B3B3B; */
+  border: 1px solid #ccc;
+}
+
+.dark .country-box {
+  background-color: #3B3B3B;
+
+}
+.dark .selectBar  {
+  background-color: #3B3B3B;
+}
+.dark .MuiSelect-select {
+  color: #fff;
+}
+header {
+  box-shadow: 0 -6px 5px 5px rgba(107, 106, 106, 0.5);
+}
+.darkBtn {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+.darkBtn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+.leaflet-bottom leaflet-right {
+  display: none; 
+}

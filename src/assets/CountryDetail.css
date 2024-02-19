@@ -1,0 +1,125 @@
+
+.country-details span {
+   color: #636363;
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 2.5rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+  margin-bottom: 2rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+.back-btn svg {
+  margin-left: -10px;
+  margin-right: 15px;
+}
+.img-container {
+  width: 80%;
+}
+
+.img-container img {
+  width: 100%;
+  /* margin-right: 100px; */
+}
+
+
+.country-details-body {
+  display: flex;
+  margin: 2rem 0rem;
+  flex-direction: row;
+  /* border: 1px solid blue; */
+}
+
+.country-details-content {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid yellow; */
+  flex-direction: column;
+  font-weight: 600;
+  /* margin: 20px 0; */
+  margin-left: 2rem;
+}
+
+.country-details-info {
+  display: flex;
+  /* width: 80%; */
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 30px;
+  /* margin-right: 400px; */
+}
+.country-details-body p {
+  margin: 10px 0;
+}
+
+.country-details-body span {
+  font-weight: 500;
+}
+
+.country-details-content div:last-child {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.country-details-content div:last-child span {
+  margin-left: 10px;
+}
+@media (max-width: 900px) {
+  .country-details {
+    margin: 0;
+    /* padding: 2rem;
+    min-height: 120vh; */
+  }
+
+  .country-details-body {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+  }
+
+  .country-details-body .img-container {
+    /* border: 1px solid blue; */
+    width: 100%;
+  }
+
+  .country-details-content {
+    /* border: 1px solid greenyellow; */
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+
+  .country-details-content h1 {
+    font-size: 24px;
+  }
+
+  .country-details-content p {
+    font-size: 16px;
+  }
+
+  .country-details-info {
+    flex-direction: column;
+  }
+
+  .country-details-info section:last-child {
+    margin-top: 20px;
+  }
+
+  .country-details-content div:last-child p {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
