@@ -50,7 +50,7 @@ const CountryDetail = ({ country }) => {
             <div className="flex justify-end">
               <button
                 onClick={handleNavigateBack}
-                className="select-none flex items-center font-bold p-2 px-5 transition duration-150 rounded-lg text-white hover:text-white bg-black hover:bg-blue-700 dark:bg-blue-700 dark:hover:text-black dark:hover:bg-white"
+                className="select-none flex items-center font-bold py-2 px-4 transition duration-150 rounded-lg text-white hover:text-white bg-black hover:bg-blue-800 dark:bg-blue-800 dark:hover:text-black dark:hover:bg-white"
               >
                 <BsArrowLeft />
                 <div className="pl-1">Back</div>

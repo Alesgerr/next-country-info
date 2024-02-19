@@ -42,6 +42,39 @@ header {
 .leaflet-bottom leaflet-right {
   display: none; 
 }
+
+.dark .MuiPagination-ul li button {
+  background-color: #0E0E0E;
+  color: #fff;
+  border: 1px solid #FF9000;
+}
+.dark .MuiPagination-ul li button:hover {
+  background-color: #FF9000;
+}
+.dark .MuiPagination-ul li:first-child button,
+.dark .MuiPagination-ul li:last-child button{
+  background-color: #FF9000 !important;
+}
+.dark header .logo,
+.dark .MuiSelect-icon,
+.dark .SearchBarIconBox svg,
+.dark .btnColor svg #Light{
+  color: #FF9000 !important;
+}
+
+.dark .customPagination button {
+  background-color: #0E0E0E;
+  color: #fff;
+  border: 1px solid #FF9000;
+}
+.dark .customPagination button:last-child, 
+.dark .customPagination button:first-child  {
+ background-color: #FF9000;
+}
+.currentPage {
+  background: #1E40AF !important;
+  border: none !important;
+}
 #demo-select-small-label {
   color: #9CA3AF;
   font-weight: 700;

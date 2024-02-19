@@ -15,10 +15,19 @@ const ThemeComp = () => {
     <div className="cursor-pointer">
       {mounted &&
         (themeMode === "dark" ? (
-          <CiLight onClick={() => setTheme("light")} size={30}
-          />
+          <button className="btnColor">
+            <CiLight
+              onClick={() => setTheme("light")}
+              size={30}
+            />
+          </button>
         ) : (
-          <CiDark onClick={() => setTheme("dark")}  size={30} />
+          <button className="btnColor">
+            <CiDark
+              onClick={() => setTheme("dark")}
+              size={30}
+            />
+          </button>
         ))}
     </div>
   );

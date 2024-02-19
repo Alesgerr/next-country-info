@@ -7,12 +7,18 @@ import Select from "@mui/material/Select";
 import { CiSearch } from "react-icons/ci";
 import Link from "next/link";
 import axios from "axios";
-
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import CustomPagination from "./CustomPagination";
 const SearchList = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [countries, setCountries] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   const handleChange = (event) => {
     setSelectedRegion(event.target.value);
@@ -34,17 +40,52 @@ const SearchList = () => {
 
     fetchData();
   }, []);
+   useEffect(() => {
+     const fetchCountries = async () => {
+       try {
+         const response = await axios.get(`https://restcountries.com/v2/all`);
+         const data = response.data;
+         const pageSize = 10; // Sayfa başına görüntülenecek ülke sayısı
 
-  const filteredCountries = countries.filter((country) => {
-    const matchesSearchTerm =
-      country?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      country?.capital?.toLowerCase().includes(searchTerm.toLowerCase());
+         // Toplam sayfa sayısını hesapla
+         setTotalPages(Math.ceil(data.length / pageSize));
 
-    const matchesRegion =
-      selectedRegion === "" || country.region === selectedRegion;
+         // Görüntülenecek ülkeleri belirle
+         const startIndex = (page - 1) * pageSize;
+         const endIndex = startIndex + pageSize;
+         const countriesToDisplay = data.slice(startIndex, endIndex);
 
-    return matchesSearchTerm && matchesRegion;
-  });
+         // Ülkeleri state'e kaydet
+         setCountries(countriesToDisplay);
+       } catch (error) {
+         console.error("Error fetching countries:", error);
+       }
+     };
+
+     fetchCountries();
+   }, [page]);
+   
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+  };
+
+ const filteredCountries = countries.filter((country) => {
+   const countryName = country?.name || ""; // Eğer isim yoksa boş bir string olarak ayarla
+   const countryCapital = country?.capital || ""; // Eğer başkent yoksa boş bir string olarak ayarla
+
+   const matchesSearchTerm =
+     (typeof countryName === "string" &&
+       countryName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+     (typeof countryCapital === "string" &&
+       countryCapital.toLowerCase().includes(searchTerm.toLowerCase()));
+
+   const matchesRegion =
+     selectedRegion === "" || country.region === selectedRegion;
+
+   return matchesSearchTerm && matchesRegion;
+ });
+
+
   const LoadingSearch = () => {
     return (
       <div className="lg:px-28 md:px-20 px-5">
@@ -111,8 +152,11 @@ const SearchList = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <div className="absolute left-3 top-3 flex flex-col justify-center">
-                <CiSearch className="text-gray-500 dark:text-gray-300" />
+              <div className="SearchBarIconBox absolute left-3 top-3 flex flex-col justify-center">
+                <CiSearch
+                  size={20}
+                  className="text-gray-500 dark:text-gray-300"
+                />
               </div>
             </div>
           </div>
@@ -208,6 +252,24 @@ const SearchList = () => {
               </div>
             </div>
           ))}
+          <div className="lg:px-28 md:px-20 px-5 pb-5 flex justify-center ">
+            <Stack spacing={2} mt={3} justifyContent="center">
+              {/* <Pagination
+                count={totalPages}
+                page={page}
+                onChange={handlePageChange}
+                variant="outlined"
+                shape="rounded"
+                // boundaryCount={0}
+                // siblingCount={1}
+              /> */}
+              <CustomPagination
+                totalPages={totalPages}
+                currentPage={page}
+                onChange={handlePageChange}
+              />
+            </Stack>
+          </div>
         </div>
       )}
     </div>

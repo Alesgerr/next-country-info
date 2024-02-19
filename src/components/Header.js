@@ -38,7 +38,7 @@ const Header = () => {
       <div className="px-5">
         <div className="flex items-center justify-between gap-3 h-20">
           <div className="text-3xl">
-            <Link href="/">Asgo</Link>
+            <Link className="logo" href="/">Asgo</Link>
           </div>
           <div className="text-2x1 flex">
             {/* {menu2?.map((mn,i) => (
