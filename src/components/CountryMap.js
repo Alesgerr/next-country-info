@@ -17,7 +17,7 @@ const CountryMap = ({ country }) => {
       center={latlng}
       zoom={8}
       style={{ height: "400px" }}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       className="rounded-lg"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

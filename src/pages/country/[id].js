@@ -6,9 +6,10 @@ import Head from "next/head";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
-const CountryMap = dynamic(() => import("../../components/CountryMap"), { ssr: false });
+const CountryMap = dynamic(() => import("../../components/CountryMap"), {
+  ssr: false,
+});
 const CountryDetail = ({ country }) => {
-
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
   const handleNavigateBack = () => {
@@ -50,7 +51,9 @@ const CountryDetail = ({ country }) => {
             <div className="flex justify-end">
               <button
                 onClick={handleNavigateBack}
-                className="select-none flex items-center font-bold py-2 px-4 transition duration-150 rounded-lg text-white hover:text-white bg-black hover:bg-blue-800 dark:bg-blue-800 dark:hover:text-black dark:hover:bg-white"
+                className="select-none flex items-center font-bold py-2 px-4 transition duration-150
+                 rounded-lg text-white hover:text-white bg-black hover:bg-orange-600
+                dark:bg-white dark:text-black dark:hover:bg-orange-500 dark:hover:text-white"
               >
                 <BsArrowLeft />
                 <div className="pl-1">Back</div>
@@ -72,7 +75,7 @@ const CountryDetail = ({ country }) => {
                   <section className="mb-4">
                     <p>
                       Official Name:{" "}
-                      <span className="font-semibold">{country.name}</span>
+                      <span className="text-orange-500">{country.name}</span>
                     </p>
                     <p>
                       Population:{" "}

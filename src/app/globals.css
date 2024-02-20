@@ -1,13 +1,15 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 700;
+  font-weight: 600;
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --main-color: #f97316;
+}
 .dark {
   background-color: #000000 !important;
 }
@@ -17,11 +19,10 @@ input {
 }
 
 .dark .country-box {
-  background-color: #3B3B3B;
-
+  background-color: #3b3b3b;
 }
-.dark .selectBar  {
-  background-color: #3B3B3B;
+.dark .selectBar {
+  background-color: #3b3b3b;
 }
 .dark .MuiSelect-select {
   color: #fff;
@@ -40,42 +41,46 @@ header {
   color: #fff;
 }
 .leaflet-bottom leaflet-right {
-  display: none; 
+  display: none;
 }
 
-.dark .MuiPagination-ul li button {
-  background-color: #0E0E0E;
-  color: #fff;
-  border: 1px solid #FF9000;
-}
-.dark .MuiPagination-ul li button:hover {
-  background-color: #FF9000;
-}
-.dark .MuiPagination-ul li:first-child button,
-.dark .MuiPagination-ul li:last-child button{
-  background-color: #FF9000 !important;
-}
 .dark header .logo,
 .dark .MuiSelect-icon,
 .dark .SearchBarIconBox svg,
-.dark .btnColor svg #Light{
-  color: #FF9000 !important;
+.dark .btnColor svg #Light {
+  color: var(--main-color) !important;
 }
-
-.dark .customPagination button {
+.mainColor {
+  color: var(--main-color);
+}
+#demo-select-small-label {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+/* ! Pagination */
+/* .dark .MuiPagination-ul li button {
   background-color: #0E0E0E;
   color: #fff;
-  border: 1px solid #FF9000;
+  border: 1px solid var(--main-color);
+}
+.dark .MuiPagination-ul li button:hover {
+  background-color: var(--main-color);
+}
+.dark .MuiPagination-ul li:first-child button,
+.dark .MuiPagination-ul li:last-child button{
+  background-color: var(--main-color) !important;
+} */
+
+/* .dark .customPagination button {
+  background-color: #0E0E0E;
+  color: #fff;
+  border: 1px solid var(--main-color);
 }
 .dark .customPagination button:last-child, 
 .dark .customPagination button:first-child  {
- background-color: #FF9000;
+ background-color: var(--main-color);
 }
 .currentPage {
   background: #1E40AF !important;
   border: none !important;
-}
-#demo-select-small-label {
-  color: #9CA3AF;
-  font-weight: 700;
-}
+} */
